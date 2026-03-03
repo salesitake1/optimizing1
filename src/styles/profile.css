@@ -136,6 +136,26 @@ body {
   padding: 9rem 3rem 2rem;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Gallery */
 .profile-gallery-wrap {
   position: relative;
@@ -143,6 +163,8 @@ body {
   background: transparent;
   flex: 0 0 380px;
   width: 380px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.1s forwards;
 }
 
 .profile-gallery-main {
@@ -176,6 +198,8 @@ body {
 
 .profile-gallery-slide img {
   object-position: top;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 0.2s forwards;
 }
 
 .profile-gallery-slide::after {
@@ -250,6 +274,39 @@ body {
   overflow: visible;
   position: relative;
   background: transparent;
+}
+
+.profile-info-panel > * {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.profile-info-panel > *:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.profile-info-panel > *:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.profile-info-panel > *:nth-child(3) {
+  animation-delay: 0.35s;
+}
+
+.profile-info-panel > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.profile-info-panel > *:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+.profile-info-panel > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.profile-info-panel > *:nth-child(7) {
+  animation-delay: 0.55s;
 }
 
 .profile-info-panel::before {
@@ -644,6 +701,76 @@ body {
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
+    animation-duration: 0.6s;
+  }
+
+  .profile-info-panel > * {
+    animation-duration: 0.5s;
+  }
+
+  .profile-info-panel > *:nth-child(1) {
+    animation-delay: 0.15s;
+  }
+
+  .profile-info-panel > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .profile-info-panel > *:nth-child(3) {
+    animation-delay: 0.25s;
+  }
+
+  .profile-info-panel > *:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  .profile-info-panel > *:nth-child(5) {
+    animation-delay: 0.35s;
+  }
+
+  .profile-info-panel > *:nth-child(6) {
+    animation-delay: 0.4s;
+  }
+
+  .profile-info-panel > *:nth-child(7) {
+    animation-delay: 0.45s;
+  }
+
+  .profile-more-grid .profile-more-card {
+    animation-duration: 0.5s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+
+  .profile-more-grid .profile-more-card:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+
+  .profile-more-section .profile-section-header {
+    animation-duration: 0.6s;
+  }
+
+  .profile-more-cta {
+    animation-duration: 0.5s;
+    animation-delay: 0.35s;
   }
 
   .profile-gallery-main {
@@ -724,12 +851,46 @@ body {
   position: relative;
 }
 
+.profile-more-section .profile-section-header {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
 .profile-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto 3rem;
+}
+
+.profile-more-grid .profile-more-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.profile-more-grid .profile-more-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.profile-more-grid .profile-more-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.profile-more-grid .profile-more-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.profile-more-grid .profile-more-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.profile-more-grid .profile-more-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.profile-more-grid .profile-more-card:nth-child(6) {
+  animation-delay: 0.6s;
 }
 
 .profile-more-card {
@@ -854,6 +1015,8 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.7s forwards;
 }
 
 .profile-btn-view-all {

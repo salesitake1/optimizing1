@@ -82,6 +82,7 @@ const cityModels: Record<string, Model[]> = {
 
 export default function CitySection({ id, cityLabel, cityName, cityNameItalic, cityKey }: CitySectionProps) {
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const dragStateRef = useRef({
     isDown: false,
     startX: 0,
@@ -92,6 +93,24 @@ export default function CitySection({ id, cityLabel, cityName, cityNameItalic, c
     animationId: null as number | null,
     hasMoved: false
   });
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (section) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      );
+      observer.observe(section);
+      return () => observer.disconnect();
+    }
+  }, []);
 
   useEffect(() => {
     const track = document.getElementById(`track-${cityKey}`) as HTMLDivElement;
@@ -354,7 +373,7 @@ export default function CitySection({ id, cityLabel, cityName, cityNameItalic, c
   };
 
   return (
-    <section className="city-section" id={id}>
+    <section className="city-section" id={id} ref={sectionRef}>
       <div className="city-header reveal">
         <div className="city-name-wrap">
           <div className="city-label">{cityLabel}</div>
